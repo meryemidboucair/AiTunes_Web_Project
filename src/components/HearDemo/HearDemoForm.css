@@ -1,0 +1,149 @@
+/* Animation pour les icônes de musique */
+@keyframes fallMusicIcons {
+  0% {
+    top: -10%; /* Commence au-dessus de l'écran */
+    opacity: 1;
+  }
+  100% {
+    top: 100%; /* Se termine en bas de l'écran */
+    opacity: 0;
+  }
+}
+
+/* Style de l'icône de musique */
+.music-icon {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #9e4141;
+  animation: fallMusicIcons 3s linear infinite; /* Animation continue */
+}
+
+.music-icon-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Pour ne pas interférer avec d'autres éléments */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1; /* Mettre les icônes derrière les autres éléments */
+}
+
+/* Arrêter l'animation lorsque l'audio est arrêté */
+.audio-playing .music-icon {
+  animation-play-state: running;
+}
+
+.audio-paused .music-icon {
+  animation-play-state: paused;
+}
+
+/* Styling global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Conteneur principal de la page */
+.hear-demo-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #464545;
+}
+
+/* Conteneur du formulaire */
+.hear-demo-container {
+  background: #1e1e1e;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  width: 350px;
+  text-align: center;
+}
+
+/* Titre */
+.hear-demo-container h1 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Liste déroulante pour choisir l'audio */
+.audio-file-picker select {
+  width: 100%;
+  padding: 10px;
+  background: #2c2c2c;
+  color: #fff;
+  border-radius: 25px;
+  border: 2px solid transparent;
+  font-size: 16px;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.audio-file-picker select:focus {
+  border-color: #9e4141;
+}
+
+/* Contrôles des icônes */
+.audio-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Icônes des boutons */
+.audio-controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9e4141;
+  font-size: 24px;
+  transition: color 0.3s ease-in-out;
+}
+
+.audio-controls button:hover {
+  color: #fff;
+}
+
+/* Barre de progression */
+.audio-progress {
+  width: 100%;
+  height: 10px;
+  background: #2c2c2c;
+  border-radius: 5px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #9e4141;
+  border-radius: 5px;
+  width: 0;
+}
+
+/* Affichage de la durée actuelle et totale */
+.audio-duration {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.audio-progress .icon {
+  position: absolute;
+  right: 10px;
+  top: -20px;
+  font-size: 14px;
+  color: #fff;
+}
