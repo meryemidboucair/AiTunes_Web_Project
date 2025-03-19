@@ -1,14 +1,13 @@
-
-
-
-
 .music-icon {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   font-size: 2rem;
   color: #9e4141;
+
   animation: fallMusicIcons 3s linear infinite; 
+
+  
 }
 
 .music-icon-container {
@@ -17,12 +16,14 @@
   height: 100%;
   top: 0;
   left: 0;
+  
   pointer-events: none; 
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: -1; 
 }
+
 
 
 .audio-playing .music-icon {
@@ -34,12 +35,14 @@
 }
 
 
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
 
 
 .hear-demo-page {
@@ -52,6 +55,7 @@
 }
 
 
+
 .hear-demo-container {
   background: #1e1e1e;
   padding: 2rem;
@@ -62,11 +66,15 @@
 }
 
 
+
+
 .hear-demo-container h1 {
   font-size: 24px;
   color: #fff;
   margin-bottom: 20px;
 }
+
+
 
 
 .audio-file-picker select {
@@ -86,6 +94,7 @@
 }
 
 
+
 .audio-controls {
   display: flex;
   justify-content: center;
@@ -93,6 +102,7 @@
   align-items: center;
   margin-top: 20px;
 }
+
 
 
 .audio-controls button {
@@ -107,6 +117,7 @@
 .audio-controls button:hover {
   color: #fff;
 }
+
 
 
 .audio-progress {
@@ -124,6 +135,7 @@
   border-radius: 5px;
   width: 0;
 }
+
 
 
 

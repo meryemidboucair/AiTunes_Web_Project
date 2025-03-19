@@ -20,11 +20,11 @@ function Footer() {
               type='email'
               placeholder='Your Email'
             />
-            {/* Remplacer le Button par un button HTML */}
             <button className='btn--outline'>Subscribe</button>
           </form>
         </div>
       </section>
+      
       <div className='footer-links'>
         <div className='footer-link-wrapper'>
           <div className='footer-link-items'>
@@ -32,13 +32,6 @@ function Footer() {
             <Link to='/sign-up'>How it works</Link>
             <Link to='/'>Terms of Service</Link>
           </div>
-          <div className='footer-link-items'>
-            <h2>Contact Us</h2>
-            <Link to='/'>Contact</Link>
-            <Link to='/'>Support</Link>
-          </div>
-        </div>
-        <div className='footer-link-wrapper'>
           <div className='footer-link-items'>
             <h2>Demo</h2>
             <Link to='/demo'>Listen to a Melody</Link>
@@ -53,6 +46,7 @@ function Footer() {
           </div>
         </div>
       </div>
+
       <section className='social-media'>
         <div className='social-media-wrap'>
           <div className='footer-logo'>
