@@ -1,0 +1,98 @@
+.get-started-form {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(90deg, rgb(33, 30, 77) 0%, rgb(124, 123, 145) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-container {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 600px;
+    color: white;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+  
+  .audio-upload {
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  
+  .audio-upload label {
+    font-size: 1.1rem;
+  }
+  
+  .audio-upload input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .audio-list {
+    margin-top: 20px;
+  }
+  
+  .audio-list ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .audio-list li {
+    color: #ccc;
+    font-size: 1rem;
+  }
+  
+  .generate-btn {
+    background-color: #9e4141;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .generate-btn:hover {
+    background-color: #7c2d2d;
+  }
+  
+  .generated-melody {
+    margin-top: 30px;
+  }
+  
+  .generated-melody h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  audio {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .form-container {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  
