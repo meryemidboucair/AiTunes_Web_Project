@@ -64,8 +64,6 @@ function GetStartedForm() {
             )}
           </div>
         </div>
-
-        {/* Champ pour sélectionner la durée de la mélodie */}
         <div className="duration-selector">
           <label>Melody Duration (seconds):</label>
           <input
