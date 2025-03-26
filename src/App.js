@@ -2,12 +2,12 @@ import './App.css';
 import React from 'react';
 import Navbar from './components/Navbar/Navbar';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from './components/Pages/Home'
-import SignIn from './components/Pages/SignIn'
-import Signup from './components/Pages/Signup'
-import HearDemo from './components/Pages/HearDemo'
-import ContactUs from './components/Pages/ContactUs'
-import GetStarted from './components/Pages/GetStarted'
+import Home from './Pages/Home'
+import SignIn from './Pages/SignIn'
+import Signup from './Pages/Signup'
+import HearDemo from './Pages/HearDemo'
+import ContactUs from './Pages/ContactUs'
+import GetStarted from './Pages/GetStarted'
 
 
 function App() {

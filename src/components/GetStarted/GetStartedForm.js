@@ -5,6 +5,7 @@ function GetStartedForm() {
   const [audioFiles, setAudioFiles] = useState([]);
   const [generatedMelody, setGeneratedMelody] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [duration, setDuration] = useState(60); 
 
   const handleAudioUpload = (e) => {
     const files = Array.from(e.target.files);
@@ -20,25 +21,19 @@ function GetStartedForm() {
     setLoading(true);
 
     try {
-      const formData = new FormData();
-      audioFiles.forEach((file, index) => {
-        formData.append(`audioFile${index}`, file);
-      });
-
-      const response = await fetch('/api/generate-melody', {
-        method: 'POST',
-        body: formData,
+      const response = await fetch(`http://127.0.0.1:3030/api/generate-melody?t=${duration}`, {
+        method: "POST",
       });
 
       if (response.ok) {
         const data = await response.json();
-        setGeneratedMelody(data.melodyUrl); 
+        setGeneratedMelody(data.melodyUrl);
       } else {
-        console.error("Error generating melody");
+
         alert("Error generating melody. Please try again.");
       }
     } catch (error) {
-      console.error("Error:", error);
+      
       alert("Error generating melody. Please try again.");
     } finally {
       setLoading(false);
@@ -70,6 +65,17 @@ function GetStartedForm() {
           </div>
         </div>
 
+        {/* Champ pour sélectionner la durée de la mélodie */}
+        <div className="duration-selector">
+          <label>Melody Duration (seconds):</label>
+          <input
+            type="number"
+            min="10"
+            value={duration}
+            onChange={(e) => setDuration(Number(e.target.value))}
+          />
+        </div>
+
         <button
           className="generate-btn"
           onClick={handleGenerateMelody}
@@ -82,7 +88,7 @@ function GetStartedForm() {
           <div className="generated-melody">
             <h2>Your Generated Melody:</h2>
             <audio controls>
-              <source src={generatedMelody} type="audio/mp3" />
+              <source src={generatedMelody} type="audio/wav" />
               Your browser does not support the audio element.
             </audio>
           </div>

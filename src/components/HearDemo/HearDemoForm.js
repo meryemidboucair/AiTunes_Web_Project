@@ -7,15 +7,19 @@ function HearDemoForm() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [audioDuration, setAudioDuration] = useState(0);
+  const [audioFiles, setAudioFiles] = useState([]);  
   const [selectedAudio, setSelectedAudio] = useState("");  
   const audioRef = useRef(new Audio());
   const progressRef = useRef(null);
 
-  const audioFiles = [
-    { name: "Audio 1", src: "/audio/audio.wav" },
-    { name: "Audio 2", src: "/audio/audio2.wav" },
-    { name: "Audio 3", src: "/audio/audio3.wav" },
-  ];
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:3030/api/list-audios")
+      .then((response) => response.json())
+      .then((data) => setAudioFiles(data.audios))
+      .catch((error) => console.error("Erreur de récupération des audios:", error));
+  }, []);
+  
 
   useEffect(() => {
     if (selectedAudio) {
@@ -84,8 +88,8 @@ function HearDemoForm() {
           <select onChange={handleAudioSelection} value={selectedAudio} disabled={isPlaying}>
             <option value="">Sélectionner un audio</option>
             {audioFiles.map((audio, index) => (
-              <option key={index} value={audio.src}>
-                {audio.name}
+              <option key={index} value={`http://127.0.0.1:3030/audio/${audio}`}>
+                {audio}
               </option>
             ))}
           </select>

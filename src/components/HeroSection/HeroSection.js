@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
 import '../../App.css';
-
 import './HeroSection.css';
 
 function HeroSection() {
-
   return (
     <div className='hero-container'>
-      <video src='/videos/v4.mp4' autoPlay loop muted />
+      <video src='/videos/v4.mp4' autoPlay loop muted className="hero-video" />
       <h1>LET CREATIVITY FLOW YOUR AI-GENERATED MASTERPIECE AWAITS!</h1>
       <p>What are you waiting for?</p>
 
