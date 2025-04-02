@@ -8,6 +8,7 @@ import Signup from './Pages/Signup'
 import HearDemo from './Pages/HearDemo'
 import ContactUs from './Pages/ContactUs'
 import GetStarted from './Pages/GetStarted'
+import Generate from './components/Generate/Generate';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path='/HearDemo' exact Component={HearDemo} />
           <Route path='/ContactUs' exact Component={ContactUs} />
           <Route path='/GetStarted' exact Component={GetStarted} />
+          <Route path='/Generate' exact Component={Generate} />
         </Routes>
       </Router>
     </>
