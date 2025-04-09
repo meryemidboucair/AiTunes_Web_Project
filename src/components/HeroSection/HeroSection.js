@@ -12,9 +12,9 @@ function HeroSection() {
 
       <div className='hero-btns'>
         <div className='btn-container'>
-          <Link to="/GetStarted">
+          <Link to="/GenerateMelody">
             <i className='fas fa-play-circle btn-icon' />
-            <p>Get Started</p>
+            <p>Generate Melody</p>
           </Link>
         </div>
 

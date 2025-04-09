@@ -7,8 +7,8 @@ import SignIn from './Pages/SignIn'
 import Signup from './Pages/Signup'
 import HearDemo from './Pages/HearDemo'
 import ContactUs from './Pages/ContactUs'
-import GetStarted from './Pages/GetStarted'
-import Generate from './components/Generate/Generate';
+import GenerateMelody from './components/GenerateMelody/GenerateMelody';
+
 
 
 function App() {
@@ -22,8 +22,8 @@ function App() {
           <Route path='/Signup' exact Component={Signup} />
           <Route path='/HearDemo' exact Component={HearDemo} />
           <Route path='/ContactUs' exact Component={ContactUs} />
-          <Route path='/GetStarted' exact Component={GetStarted} />
-          <Route path='/Generate' exact Component={Generate} />
+          <Route path='/GenerateMelody' exact Component={GenerateMelody} />
+
         </Routes>
       </Router>
     </>

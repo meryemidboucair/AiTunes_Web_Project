@@ -128,4 +128,13 @@ button:hover {
   color: #fff;
   text-decoration: underline;
 }
+.error-message {
+  color: #ff3333;
+  background-color: #ffebeb;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
 }

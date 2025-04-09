@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import "./Generate.css";
+import "./GenerateMelody.css";
 
-function Generate() {
+function GenerateMelody() {
     const [ loading, setLoading ] = useState(true);
     const [ allModels, setAllModels ] = useState([]);  // [ { name: "", desc: "" }, ... ]
     const [ activeModel, setActiveModel ] = useState(null);  // null || string
@@ -11,8 +11,13 @@ function Generate() {
         fetch("http://127.0.0.1:3030/api/models", { 'method': 'GET' })
         .then((res) => {
             if(res.ok) {
-                res.json().then(models => setAllModels(models));
-                setLoading(false);
+                res.json().then(
+                    models => {
+                        setAllModels(models);
+                        setLoading(false);
+                        setActiveModel(models[0].name);
+                    }
+                );
             }else setLoading(false);
         });
     }, []);
@@ -70,4 +75,4 @@ function Generate() {
     }
 }
 
-export default Generate;
+export default GenerateMelody;

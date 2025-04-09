@@ -4,10 +4,7 @@
   transform: translateX(-50%);
   font-size: 2rem;
   color: #9e4141;
-
-  animation: fallMusicIcons 3s linear infinite; 
-
-  
+  animation: fallMusicIcons 3s linear infinite;
 }
 
 .music-icon-container {
@@ -16,15 +13,12 @@
   height: 100%;
   top: 0;
   left: 0;
-  
-  pointer-events: none; 
+  pointer-events: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: -1; 
+  z-index: -1;
 }
-
-
 
 .audio-playing .music-icon {
   animation-play-state: running;
@@ -34,8 +28,6 @@
   animation-play-state: paused;
 }
 
-
-
 * {
   margin: 0;
   padding: 0;
@@ -43,18 +35,13 @@
   font-family: 'Poppins', sans-serif;
 }
 
-
-
 .hear-demo-page {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background: linear-gradient(90deg, rgb(33, 30, 77) 0%, rgb(124, 123, 145) 100%);
-
 }
-
-
 
 .hear-demo-container {
   background: #1e1e1e;
@@ -65,17 +52,11 @@
   text-align: center;
 }
 
-
-
-
 .hear-demo-container h1 {
   font-size: 24px;
   color: #fff;
   margin-bottom: 20px;
 }
-
-
-
 
 .audio-file-picker select {
   width: 100%;
@@ -93,8 +74,6 @@
   border-color: #9e4141;
 }
 
-
-
 .audio-controls {
   display: flex;
   justify-content: center;
@@ -102,8 +81,6 @@
   align-items: center;
   margin-top: 20px;
 }
-
-
 
 .audio-controls button {
   background: none;
@@ -117,8 +94,6 @@
 .audio-controls button:hover {
   color: #fff;
 }
-
-
 
 .audio-progress {
   width: 100%;
@@ -136,19 +111,53 @@
   width: 0;
 }
 
-
-
-
 .audio-duration {
   margin-top: 10px;
   font-size: 14px;
   color: #fff;
 }
 
-.audio-progress .icon {
-  position: absolute;
-  right: 10px;
-  top: -20px;
-  font-size: 14px;
-  color: #fff;
+.loading-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #9e4141;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-message {
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+}
+
+.retry-button {
+  background: #9e4141;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.retry-button:hover {
+  background: #c05353;
+}
+
+.no-audio-message {
+  color: #aaa;
+  font-style: italic;
+}
+
+@keyframes fallMusicIcons {
+  0% { transform: translate(-50%, -100px); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translate(-50%, 100vh); opacity: 0; }
 }
