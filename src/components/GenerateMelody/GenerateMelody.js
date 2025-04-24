@@ -6,6 +6,7 @@ function GenerateMelody() {
     const [ allModels, setAllModels ] = useState([]);  // [ { name: "", desc: "" }, ... ]
     const [ activeModel, setActiveModel ] = useState(null);  // null || string
     const [ fileName, setFileName ] = useState(null);  // TODO : Input to change the file's name
+    const [ generating, setGenerating ] = useState(false);  // Is it generating a melody?
 
     useEffect(() => {
         fetch("http://127.0.0.1:3030/api/models", { 'method': 'GET' })
@@ -26,6 +27,7 @@ function GenerateMelody() {
         event.preventDefault();
     
         if (!activeModel) return;
+        setGenerating(true);
     
         const file = fileName ? `${fileName}.wav` : "out.wav";
     
@@ -46,7 +48,8 @@ function GenerateMelody() {
             a.click();
             a.remove();
         })
-        .catch(error => console.error("Error fetching melody:", error));
+        .catch(error => console.error("Error fetching melody:", error))
+        .finally(() => setGenerating(false));
     }
     
 
@@ -65,7 +68,7 @@ function GenerateMelody() {
                 {activeModel &&
                     <>
                         <p>{allModels.find(model => model.name === activeModel)?.desc}</p>
-                        <button onClick={generateMelody}>Generate</button>
+                        <button onClick={generateMelody} disabled={generating}>{generating ? "Generating..." : "Generate"}</button>
                     </>
                 }
 
